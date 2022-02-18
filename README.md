@@ -65,7 +65,7 @@ This project uses [go modules](https://github.com/golang/go/wiki/Modules) for de
 To build:
 ```bash
 git clone https://github.com/CarpiDiem98/GreenPassRaspberry.git
-cd packer-plugin-arm-image
+cd GreenPassRaspberry
 go mod download
 go build
 ```
@@ -128,27 +128,3 @@ sudo dd bs=4m if=output-arm-image/image of=/dev/disk2
 # eject the disk
 diskutil eject /dev/disk2
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
