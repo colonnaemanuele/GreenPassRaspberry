@@ -100,7 +100,7 @@ docker run \
 ```
 ## Running Standalone
 ```
-packer build samples/raspbian_golang.json
+packer build samples/raspbian_green_pass.json
 ```
 # Flashing
 We have a post-processor stage for flashing.
