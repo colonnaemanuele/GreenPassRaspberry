@@ -52,7 +52,7 @@ To use, you need to provide an existing image that we will then modify. We re-us
 for downloading ISOs (though the image should not be an ISO file).
 Supporting also zipped images (enabling you downloading official raspbian images directly).
 
-See [raspbian_greenpass.json](samples/raspbian_greenpass.json) and [config.go](pkg/builder/config.go) for details.
+See [raspbian_green_pass.json](samples/raspbian_green_pass.json) and [config.go](pkg/builder/config.go) for details.
 For configuration reference, see the [builder doc](docs/builders/arm-image.mdx).
 
 *Note* if your image is arm64, set `qemu_binary` to `qemu-aarch64-static` in your configuration json file.
@@ -96,7 +96,7 @@ docker run \
   -v ${PWD}/packer_cache:/build/packer_cache \
   -v ${PWD}/output-arm-image:/build/output-arm-image \
   -e PACKER_CACHE_DIR=/build/packer_cache \
-  packer-builder-arm build samples/raspbian_greenpass.json
+  packer-builder-arm build samples/raspbian_green_pass.json
 ```
 ## Running Standalone
 ```
