@@ -1,0 +1,46 @@
+{
+  "variables": {
+  },
+  "builders": [
+    {
+      "type": "arm-image",
+      "iso_url": "https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip",
+      "iso_checksum": "sha256:a82ed4139dfad31c3167e60e943bcbe28c404d1858f4713efe5530c08a419f50",
+      "target_image_size": 6442450944,
+       "output_filename": "../output-arm-image/image.img"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source":"./script",
+      "destination":"/home/pi/"
+    },
+    {
+      "type": "file",
+      "source":"./PyMuPDF",
+      "destination":"/home/pi/"
+    },
+    {
+      "type": "shell",
+      "inline": [
+      	      "echo 'APT UPDATE & UPGRADE'",
+      	      "apt-get update --allow-releaseinfo-change",
+      	      
+      	      "echo 'INSTALL OPENCV'",
+      	      "apt-get install -y python3-opencv",
+      	      
+      	      "echo 'INSTALL ZBARCAM e MOTION'",
+      	      "apt-get install -y zbar-tools",
+      	      "apt-get install -y motion",
+      	      
+      	      "echo 'INSTALL GREENPASS'",	
+      	      "apt-get install -y mupdf",
+      	      "python3 ./PyMuPDF/setup.py install",
+      	      "python3 -m pip install greenpass",
+      	      
+      	      "echo 'FANCULO!'"
+      ]
+    }
+  ]
+}
