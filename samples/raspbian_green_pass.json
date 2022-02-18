@@ -17,15 +17,20 @@
       "destination":"/home/pi/"
     },
     {
-      "type": "file",
-      "source":"./PyMuPDF",
-      "destination":"/home/pi/"
-    },
-    {
       "type": "shell",
       "inline": [
       	      "echo 'APT UPDATE & UPGRADE'",
       	      "apt-get update --allow-releaseinfo-change",
+      	      "pip3 install pip --upgrade",
+      	      "apt-get -yy upgrade",
+      	      "apt-get install -y python3-wheel",
+      	      "apt-get -y autoremove",
+      	      
+      	      "echo 'ENABLE SSH'",
+      	      "systemctl enable ssh",
+      	      
+      	      "echo 'INSTALL FEH'",
+      	      "apt-get install -y feh",
       	      
       	      "echo 'INSTALL OPENCV'",
       	      "apt-get install -y python3-opencv",
@@ -34,11 +39,9 @@
       	      "apt-get install -y zbar-tools",
       	      "apt-get install -y motion",
       	      
-      	      "echo 'INSTALL GREENPASS'",	
-      	      "apt-get install -y mupdf",
-      	      "python3 ./PyMuPDF/setup.py install",
-      	      "python3 -m pip install greenpass",
-      	      
+      	      "echo 'INSTALL GREENPASS'",
+      	      "git clone https://github.com/berdav/greenpass.git",
+      	      "pip3 install -r greenpass/requirements.txt",
       	      "echo 'FANCULO!'"
       ]
     }
