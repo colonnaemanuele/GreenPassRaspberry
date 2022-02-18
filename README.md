@@ -86,7 +86,7 @@ Build the Docker image locally
 docker build -t packer-builder-arm .
 ```
 
-Build the `samples/raspbian_greenpass.json` Packer image
+Build the `samples/raspbian_green_pass.json` Packer image
 ```shell
 docker run \
   --rm \
