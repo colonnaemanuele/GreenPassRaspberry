@@ -44,13 +44,12 @@
       	      "apt-get install -y motion",
       	      
       	      "echo 'INSTALL MUPDF'",
-      	      "apt-get install mupdf mupdf-tools",
-      	      "pip3 install PyMuPDF==1.17.4",
+      	      "apt-get install -y mupdf mupdf-tools libmupdf-dev",
       	      
       	      "echo 'INSTALL GREENPASS'",
       	      "pip3 install -r /home/pi/greenpass/requirements.txt",
       	      
-      	      "echo 'FANCULO!'"
+      	      "echo 'PROCESSO TERMINATO!1!1'"
       ]
     }
   ]
