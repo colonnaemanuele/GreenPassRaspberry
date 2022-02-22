@@ -7,7 +7,7 @@
       "iso_url": "https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip",
       "iso_checksum": "sha256:a82ed4139dfad31c3167e60e943bcbe28c404d1858f4713efe5530c08a419f50",
       "target_image_size": 6442450944,
-       "output_filename": "../output-arm-image/image.img"
+       "output_filename": "../output-arm-image/image"
     }
   ],
   "provisioners": [
@@ -17,13 +17,17 @@
       "destination":"/home/pi/"
     },
     {
+      "type":"file",
+      "source":"./greenpass",
+      "destination":"/home/pi/"
+    },
+    
+    {
       "type": "shell",
       "inline": [
       	      "echo 'APT UPDATE & UPGRADE'",
       	      "apt-get update --allow-releaseinfo-change",
-      	      "pip3 install pip --upgrade",
-      	      "apt-get -yy upgrade",
-      	      "apt-get install -y python3-wheel",
+      	      "apt-get -y upgrade",
       	      "apt-get -y autoremove",
       	      
       	      "echo 'ENABLE SSH'",
@@ -39,9 +43,12 @@
       	      "apt-get install -y zbar-tools",
       	      "apt-get install -y motion",
       	      
+      	      "echo 'INSTALL MUPDF'",
+      	      "apt-get install mupdf mupdf-tools",
+      	      
       	      "echo 'INSTALL GREENPASS'",
-      	      "git clone https://github.com/berdav/greenpass.git",
-      	      "pip3 install -r greenpass/requirements.txt",
+      	      "pip3 install -r /home/pi/greenpass/requirements.txt",
+      	      
       	      "echo 'FANCULO!'"
       ]
     }

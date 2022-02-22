@@ -1,8 +1,9 @@
 "inline": [
-      	      
       	      "echo 'APT UPDATE & UPGRADE'",
       	      "apt-get update --allow-releaseinfo-change",
+      	      "pip3 install pip --upgrade",
       	      "apt-get -yy upgrade",
+      	      "apt-get install -y python3-wheel",
       	      "apt-get -y autoremove",
       	      
       	      "echo 'ENABLE SSH'",
@@ -18,17 +19,8 @@
       	      "apt-get install -y zbar-tools",
       	      "apt-get install -y motion",
       	      
-      	      "echo 'INSTALL GREENPASS'",	
-      	      
-      	      "pip3 install fitz",
-      	      "apt-get install -y libzbar-dev libzbar0",
-      	      "python3 -m pip install --upgrade pip",
-	      "python3 -m pip install --upgrade pymupdf",
-      	      
-      	      "git clone https://github.com/pymupdf/PyMuPDF.git",
-      	      "python3 PyMuPDF/setup.py install --user",
-      	      
+      	      "echo 'INSTALL GREENPASS'",
       	      "git clone https://github.com/berdav/greenpass.git",
       	      "pip3 install -r greenpass/requirements.txt",
-	      "echo 'FANCULO!'"
+      	      "echo 'FANCULO!'"
       ]
