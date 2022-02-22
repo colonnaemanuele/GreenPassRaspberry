@@ -45,6 +45,7 @@
       	      
       	      "echo 'INSTALL MUPDF'",
       	      "apt-get install mupdf mupdf-tools",
+      	      "pip3 install PyMuPDF==1.17.4",
       	      
       	      "echo 'INSTALL GREENPASS'",
       	      "pip3 install -r /home/pi/greenpass/requirements.txt",
