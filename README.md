@@ -102,6 +102,13 @@ docker run \
 ```
 packer build samples/raspbian_green_pass.json
 ```
+# Zipping
+This arm image building proces may take some time to complete. You will get output file output-arm-image/image. You can archive the output image file to reduce the size on disk.
+```shell
+zip -r rm-image.zip output-arm-image/image
+```
+Finally Raspberry Pi image is ready to prepare SD card and boot-up the Raspberry Pi device. You can use the Raspberry Pi Imager or any other tool to create a bootable SD card.
+
 # Flashing
 We have a post-processor stage for flashing.
 
